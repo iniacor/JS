@@ -142,35 +142,97 @@
 // const merge = (obj1, obj2) => ({ ...obj1, ...obj2 });
 // console.log(merge(obj1, obj2));
 
-const rooms = {
-  room1: [
-    { name: 'Jack' },
-    { name: 'Andrey' },
-    { name: 'Ann' },
-    { name: 'Vasyl' },
-  ],
+// Извлекаем все имена
+// const rooms2 = {};
 
-  room2: [
-    { name: 'Dan' },
-    { name: 'Kolya' },
-    { name: 'Olya' },
-    { name: 'Bob' },
-  ],
+// const rooms = {
+//   room1: [
+//     { name: 'Jack' },
+//     { name: 'Andrey' },
+//     { name: 'Ann' },
+//     { name: 'Vasyl' },
+//   ],
 
-  room3: [
-    { name: 'Denis' },
-    { name: 'Max' },
-    { name: 'Alex' },
-    { name: 'Stas' },
-  ],
-};
+//   room2: [
+//     { name: 'Dan' },
+//     { name: 'Kolya' },
+//     { name: 'Olya' },
+//     { name: 'Bob' },
+//   ],
 
-const getPeople = (obj) => {
-  const arrOfRooms = Object.values(obj);
-  const bufferArray = arrOfRooms.reduce((acc, room) => acc.concat(room));
-  const names = Object.entries(bufferArray);
+//   room3: [
+//     { name: 'Denis' },
+//     { name: 'Max' },
+//     { name: 'Alex' },
+//     { name: 'Stas' },
+//   ],
+// };
 
-  return names;
-};
+// const getPeople = (obj) =>
+//   Object.values(obj)//получаю три массива с объектами именами
+//     .reduce((acc, room) => acc.concat(room))//объединяю все объекты в 1 масси
+//     .map((name) => Object.values(name))//получаю значения каждого объекта в отдельный массив
+//     .flat;// соединяю все подмассивы в один массив с именами
+//рабочая версия
+// const getPeople = (obj) =>
+//   Object.values(obj)
+//     .reduce((acc, room) => acc.concat(room), [])
+//     .map((name) => Object.values(name))
+//     .flat();
+// console.log(getPeople(rooms));
+// console.log(getPeople(rooms2));
 
-console.log(getPeople(rooms));
+// Подсчет суммы дневных транзакций
+// const dayTransactions = [
+//   { userId: 22, amount: 60, operation: 'sell' },
+//   { userId: 22, amount: 160, operation: 'buy' },
+//   { userId: 44, amount: 90, operation: 'sell' },
+// ];
+//решение через map
+// const getTotalRevenue = (transactions) => {
+//   let res = 0;
+//   transactions.map((user) => (res += user['amount']));
+//   return res;
+// };
+//решение через reduce
+// const getTotalRevenue = (transactions) =>
+//   transactions.reduce((acc, user) => (acc += user['amount']), 0);
+// const result = getTotalRevenue(dayTransactions); // ==> 310
+// console.log(result);
+
+//Добавляем computed property в объект
+// const transaction = {
+//   value: 170,
+// };
+// с помощью квадратных скобок
+// function addPropertyV1(obj, key, value) {
+//   obj[key] = value;
+//   return obj;
+// }
+
+// С помощью Object.assign()
+// function addPropertyV2(obj, key, value) {
+//   let computedProperty = {
+//     [key]: value,
+//   };
+//   return Object.assign(obj, computedProperty);
+// }
+// С помощью Object.assign() плюс копия входящего массива чтобы избежать мутации данных
+// function addPropertyV3(obj, key, value) {
+//   let copyObj = Object.assign({}, obj);
+//   let computedProperty = {
+//     [key]: value,
+//   };
+//   return Object.assign(copyObj, computedProperty);
+// }
+// C помошью оператора spred
+// function addPropertyV4(obj, key, value) {
+//   const copyObj = { ...obj };
+//   const computedProperty = {
+//     [key]: value,
+//   };
+//   return { ...copyObj, ...computedProperty };
+// }
+
+// addPropertyV1(transaction, 'currency', 'USD'); // ==> { value: 170, currency: 'USD' }
+// console.log(addPropertyV1(transaction, 'currency', 'USD'));
