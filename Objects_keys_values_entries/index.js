@@ -236,3 +236,86 @@
 
 // addPropertyV1(transaction, 'currency', 'USD'); // ==> { value: 170, currency: 'USD' }
 // console.log(addPropertyV1(transaction, 'currency', 'USD'));
+
+// const keys = ['name', 'address', 'age'];
+// const values = ['Bob', 'Ukraine', 34];
+
+// function buildObject(keysList, valuesList) {
+//   const obj = {};
+//   for (var i = 0; i < keysList.length; i++) {
+//     obj[keysList[i]] = valuesList[i];
+//   }
+//   return obj;
+// }
+// через forEach
+// function buildObject(keysList, valuesList) {
+//   const obj = {};
+//   keysList.forEach((key, index) => (obj[key] = valuesList[index]));
+//   return obj;
+// }
+// через map
+// function buildObject(keysList, valuesList) {
+//   const obj = {};
+//   keysList.map((key, index) => (obj[key] = valuesList[index]));
+//   return obj;
+// }
+// через reduce
+// const buildObject = (keysList, valuesList) =>
+//   keysList.reduce((acc, key, index) => {
+//     acc[key] = valuesList[index];
+//     return acc;
+//   }, {});
+
+// const result = buildObject(keys, values); // ==> { name: 'Bob', address: 'Ukraine', age: 34 }
+// console.log(result);
+
+// const obj1 = {
+//   name: 'Tom',
+//   age: 17,
+// };
+
+// const obj2 = {
+//   name: 'Bob',
+//   age: 17,
+// };
+
+// const obj3 = {
+//   name: 'Bob',
+//   age: 17,
+//   student: false,
+// };
+
+// const obj4 = {
+//   name: 'Tom',
+//   age: 17,
+// };
+
+//Сравнение двух объектов по свойствам а не по ссылке
+// function compareObjects(obj1, obj2) {
+//   return Object.keys({ ...obj1, ...obj2 }).every(
+//     (key) => obj1[key] === obj2[key]
+//   );
+// }
+
+// compareObjects(obj1, obj2); // ==> false
+// compareObjects(obj2, obj3); // ==> false
+// compareObjects(obj1, obj4); // ==> true
+
+// console.log(compareObjects(obj1, obj2));
+// console.log(compareObjects(obj2, obj3));
+// console.log(compareObjects(obj1, obj4));
+
+const customers = {
+  'customer-id-1': {
+    name: 'William',
+    age: 54,
+  },
+  'customer-id-2': {
+    name: 'Tom',
+    age: 17,
+  },
+};
+const getCustomersList = (obj) => {
+  return Object.values({ ...obj }).sort((a, b) => (a.name > b.name ? 1 : -1));
+};
+console.log(getCustomersList(customers));
