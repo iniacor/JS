@@ -305,17 +305,20 @@
 // console.log(compareObjects(obj2, obj3));
 // console.log(compareObjects(obj1, obj4));
 
-const customers = {
-  'customer-id-1': {
-    name: 'William',
-    age: 54,
-  },
-  'customer-id-2': {
-    name: 'Tom',
-    age: 17,
-  },
-};
-const getCustomersList = (obj) => {
-  return Object.values({ ...obj }).sort((a, b) => (a.name > b.name ? 1 : -1));
-};
-console.log(getCustomersList(customers));
+// const customers = {
+//   'customer-id-1': {
+//     name: 'William',
+//     age: 54,
+//   },
+//   'customer-id-2': {
+//     name: 'Tom',
+//     age: 17,
+//   },
+// };
+//Из объеткта в массив пользователей
+// const getCustomersList = (obj) =>
+//   Object.entries(obj)
+//     .map(([id, customer]) => ({ id, ...customer }))
+//     .sort((a, b) => (a.age > b.age ? 1 : -1));
+
+// console.log(getCustomersList(customers));
