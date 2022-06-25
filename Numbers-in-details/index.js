@@ -115,10 +115,21 @@
 //     : new Array(length)
 //         .fill()
 //         .map(() => Math.round(Math.random() * (to - from) + from));
-
 // examples
 // console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [2, 2, 2, 3, 2]
 // console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 2, 2, 2, 2]
 // console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 3, 2, 3, 2]
 // console.log(getRandomNumbers(5, 2, 2)); // ==> null
 // console.log(getRandomNumbers(5, 1.4, 1.22)); // ==> null
+
+// Округляем значение num вплоть до знака prec
+// const superRound = (num, prec) => [
+//   Math.floor(num * 10 ** prec) / 10 ** prec,
+//   Math.trunc(num * 10 ** prec) / 10 ** prec,
+//   Math.ceil(num * 10 ** prec) / 10 ** prec,
+//   Math.round(num * 10 ** prec) / 10 ** prec,
+//   Number(num.toFixed(prec)),
+// ];
+
+// console.log(superRound(11.12556, 2)); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
+// console.log(superRound(6.11768, 3)); // ==> [6.117, 6.117, 6.118, 6.118, 6.118]
