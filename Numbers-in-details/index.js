@@ -85,3 +85,17 @@
 // console.log(getMaxAbsoluteNumber([2.1, 0, 1.6])); // ===> 2.1
 // console.log(getMaxAbsoluteNumber([-6, 3, 5, -1])); // ===> 6
 // console.log(getMaxAbsoluteNumber([-777, 3, -1, 45, -20])); // ===> 777
+
+//Функция возвращает округленную сумму числел
+// const arr = [2, 2.4567, 3.4, 5, 0.34, 8];
+// const getTotalPrice = (arr) => {
+//   const result = arr.reduce((acc, num) => {
+//     return (acc += num);
+//   });
+//   return `$${Math.floor(result * 100) / 100}`;
+// };
+// сокращенная версия
+// const getTotalPrice = (arr) =>
+//   `$${Math.floor(arr.reduce((acc, num) => (acc += num)) * 100) / 100}`;
+
+// console.log(getTotalPrice(arr));
