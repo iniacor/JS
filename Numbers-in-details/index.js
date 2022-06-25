@@ -63,16 +63,25 @@
 // console.log(multiRound(6.112));
 // multiRound(11.12556); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
 // multiRound(6.112); // ==> [6.11, 6.11, 6.12, 6.11, 6.11]
-//Получаем максимальное число из массива плюс по модулю
-const getMaxAbsoluteNumber = (arr) => {
-  if (!Array.isArray(arr)) {
-    return null;
-  }
-  let result = arr.map((num) => Math.abs(num));
-  return Math.max(...result);
-};
-// examples
-console.log(getMaxAbsoluteNumber([-10, 10, -10])); // ===> 10
-console.log(getMaxAbsoluteNumber([2.1, 0, 1.6])); // ===> 2.1
-console.log(getMaxAbsoluteNumber([-6, 3, 5, -1])); // ===> 6
-console.log(getMaxAbsoluteNumber([-777, 3, -1, 45, -20])); // ===> 777
+
+//Получаем максимальное число из массива плюс по модулю делая проверку что єто массив и его длина не 0
+// const getMaxAbsoluteNumber = (arr) => {
+//   if (!Array.isArray(arr)) {
+//     return null;
+//   }
+//   let result = arr.map((num) => Math.abs(num));
+//   return Math.max(...result);
+// };
+//Сокращенная версия
+// const getMaxAbsoluteNumber = (arr) =>
+//   !Array.isArray(arr) || arr.length === 0
+//     ? null
+//     : Math.max(...arr.map((num) => Math.abs(num)));
+
+// // examples
+// console.log(getMaxAbsoluteNumber([-10, 10, -10])); // ===> 10
+// console.log(getMaxAbsoluteNumber([])); // ===> 10
+// console.log(getMaxAbsoluteNumber(3)); // ===> 10
+// console.log(getMaxAbsoluteNumber([2.1, 0, 1.6])); // ===> 2.1
+// console.log(getMaxAbsoluteNumber([-6, 3, 5, -1])); // ===> 6
+// console.log(getMaxAbsoluteNumber([-777, 3, -1, 45, -20])); // ===> 777
