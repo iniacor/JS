@@ -99,3 +99,26 @@
 //   `$${Math.floor(arr.reduce((acc, num) => (acc += num)) * 100) / 100}`;
 
 // console.log(getTotalPrice(arr));
+
+// Массив случайніх чисел из заданного промежутка
+// const getRandomNumbers = (length, from, to) => {
+//   if (Math.abs(to - from) < 1) {
+//     return null;
+//   }
+//   let result = Array(length).fill();
+//   return result.map((num) => Math.round(Math.random() * (to - from) + from));
+// };
+//Сокращенная версия
+// const getRandomNumbers = (length, from, to) =>
+//   Math.abs(to - from) < 1
+//     ? null
+//     : new Array(length)
+//         .fill()
+//         .map(() => Math.round(Math.random() * (to - from) + from));
+
+// examples
+// console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [2, 2, 2, 3, 2]
+// console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 2, 2, 2, 2]
+// console.log(getRandomNumbers(5, 1.4, 3.22)); // ==> [3, 3, 2, 3, 2]
+// console.log(getRandomNumbers(5, 2, 2)); // ==> null
+// console.log(getRandomNumbers(5, 1.4, 1.22)); // ==> null
