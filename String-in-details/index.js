@@ -81,16 +81,18 @@
 // };
 // console.log(splitString('sdsfvmlsdssdsdmxzv', 4));
 
-const countOccurrences = (text = '', str) => {
-  let count = 0;
-  let index = text.indexOf(str);
-  if (str.length === 0) {
-    return null;
-  }
-  while (index !== -1) {
-    count++;
-    index = text.indexOf(str, index + 1);
-  }
-  return count;
-};
-console.log(countOccurrences('texttexttext', 'ex'));
+//  Подсчет вхождений подстроки в строку
+// const countOccurrences = (text = '', str) => {
+//   let count = 0;
+//   let index = text.indexOf(str); // получаем индекс с которого начинается искомый элемент str
+//   if (str.length === 0) {
+//     return null;
+//   }
+//   while (index !== -1) {
+//     // пока индекс не равен -1 (то есть присутствует в строке)
+//     count++; // увеличиваем счетчик каждый раз когда находим вхождение ел-та
+//     index = text.indexOf(str, index + 1); // Увеличиваем на 1 стартовый индекс метода для поиска
+//   }
+//   return count;
+// };
+// console.log(countOccurrences('texttexttext', 'ex'));
