@@ -16,28 +16,28 @@
 // };
 // console.log(splitText('sdsfvmlsdssdsdmxzv', 4));
 //Сортируем телефонную книгу
-const arr = [
-  {
-    name: 'Tom',
-    phoneNumber: '777-77-77',
-  },
-  {
-    name: 'Bob',
-    phoneNumber: '725-74-27',
-  },
-  {
-    name: 'Mary',
-    phoneNumber: '737-75-70',
-  },
-  {
-    name: 'Alisa',
-    phoneNumber: '717-72-87',
-  },
-  {
-    name: 'Dilan',
-    phoneNumber: '767-57-13',
-  },
-];
+// const arr = [
+//   {
+//     name: 'Tom',
+//     phoneNumber: '777-77-77',
+//   },
+//   {
+//     name: 'Bob',
+//     phoneNumber: '725-74-27',
+//   },
+//   {
+//     name: 'Mary',
+//     phoneNumber: '737-75-70',
+//   },
+//   {
+//     name: 'Alisa',
+//     phoneNumber: '717-72-87',
+//   },
+//   {
+//     name: 'Dilan',
+//     phoneNumber: '767-57-13',
+//   },
+// ];
 //рабочая версия
 // const sortContacts = (arr, direction) => {
 //   if (!Array.isArray(arr)) {
@@ -61,3 +61,36 @@ const arr = [
 //     : null;
 
 // console.log(sortContacts(arr));
+
+//Разделяем входящую строку str на подстроки длиной length и возвращаем в виде массива
+// const splitString = (str, length = 10) => {
+//   if (typeof str !== typeof '') {
+//     return null;
+//   }
+//   const strArr = [];
+//   let startPosition = 0;
+//   while (true) {
+//     let chunk = str.substr(startPosition, length);
+//     if (chunk.length === 0) {
+//       break;
+//     }
+//     strArr.push(chunk + '.'.repeat(length - chunk.length));
+//     startPosition += length;
+//   }
+//   return strArr;
+// };
+// console.log(splitString('sdsfvmlsdssdsdmxzv', 4));
+
+const countOccurrences = (text = '', str) => {
+  let count = 0;
+  let index = text.indexOf(str);
+  if (str.length === 0) {
+    return null;
+  }
+  while (index !== -1) {
+    count++;
+    index = text.indexOf(str, index + 1);
+  }
+  return count;
+};
+console.log(countOccurrences('texttexttext', 'ex'));
