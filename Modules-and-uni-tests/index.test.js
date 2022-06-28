@@ -1,13 +1,11 @@
-import getSum, { getSquaredNumbers, getOddNumbers } from './calculator.js';
-it('Should get squared numbers', () => {
-  const result = getSquaredNumbers([1, 2, 3]);
-  expect(result).toEqual([1, 4, 9]);
+import { getEvenNumbers } from './calculator';
+it('Should 17 equal 17', () => {
+  expect(17).toEqual(17);
 });
-it('Should keep odd numbers only', () => {
-  const result = getOddNumbers([1, 2, 3, 4, 5]);
-  expect(result).toEqual([1, 3, 5]);
+it('Should 18  not equal 17', () => {
+  expect(18).not.toEqual(17);
 });
-it('Should get sum of numbers', () => {
-  const result = getSum(8, 4);
-  expect(result).toEqual(12);
+it('Should keep even numbers only', () => {
+  const result = getEvenNumbers([2, 4, 6, 7, 3, 5]);
+  expect(result).toEqual([2, 4, 6]);
 });
