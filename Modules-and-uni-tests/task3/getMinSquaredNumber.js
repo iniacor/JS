@@ -1,8 +1,9 @@
-const arr = [-777, 3, -2, 6, 45, -20];
+const arr = [-777, 3.2, -2, 6, 45, -20];
 export const getMinSquaredNumber = (arr) => {
   if (!Array.isArray(arr)) {
     return null;
   }
-  return arr.map((num) => num * num);
+  const abs = arr.map((num) => Math.abs(num * num));
+  return Math.min(...abs);
 };
 console.log(getMinSquaredNumber(arr));
