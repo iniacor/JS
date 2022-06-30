@@ -1,11 +1,10 @@
-import { add, decrease, reset, getMemo } from './index.js';
-
+import { add, decrease, reset, getMemo } from './calculateSettings.js';
 function calculation() {
   return {
-    add: add(),
-    decrease: decrease(),
-    reset: reset(),
-    getMemo: getMemo(),
+    add,
+    decrease,
+    reset,
+    getMemo,
   };
 }
 const calculator = calculation();
