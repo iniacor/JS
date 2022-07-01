@@ -22,7 +22,12 @@ export const createLogger = () => {
 };
 
 // examples;
-// const logger1 = createLogger();
+const logger1 = createLogger();
+setTimeout(() => logger1.warn(), 1000);
+setTimeout(() => logger1.log(), 2000);
+setTimeout(() => logger1.error(), 3000);
+
+setTimeout(() => console.log(logger1.getRecords()), 5000);
 // logger1.log('User logged in');
 // logger1.log('User test 2');
 // logger1.log('User test 3');
