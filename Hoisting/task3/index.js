@@ -7,7 +7,7 @@
 //     .fill()
 //     .map(
 //       (el, index) =>
-//         function (el) {
+//         function () {
 //           return index;
 //         }
 //     );
@@ -16,22 +16,14 @@
 
 // console.log(createArrayOfFunctions(9)[5]());
 
-export const createArrayOfFunctions = function (num = 0) {
-  if (typeof num !== 'number') {
-    return null;
-  }
-  const arr = Array(num)
-    .fill()
-    .map(
-      (el, index) =>
-        function (el) {
-          return index;
-        }
-    );
-  return arr;
-};
+// export const createArrayOfFunctions = function (num = 0) {
+//   if (typeof num !== 'number') {
+//     return null;
+//   }
+//   return [...Array(num)].map((el) => (el = num * 4));
+// };
 
-console.log(createArrayOfFunctions(9)[5]());
+// console.log(createArrayOfFunctions(9));
 
 // input number
 // output number
