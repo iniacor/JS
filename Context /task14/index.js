@@ -12,27 +12,27 @@
  */
 // input - function
 // output - function
-// function saveFuncCalls(func) {
-//   // input - any arguments
-//   // output - ???
-//   const callMemory = [];
-//   return function withMemory(...args) {
-//     callMemory.push([...args]);
-//     withMemory.callsHistory = callMemory;
-//     return func.call(this, ...args);
-//   };
-// }
+function saveFuncCalls(func) {
+  // input - any arguments
+  // output - ???
+  const callMemory = [];
+  return function withMemory(...args) {
+    callMemory.push(args);
+    withMemory.callsHistory = callMemory;
+    return func.apply(this, args);
+  };
+}
 
 // example 1
-// function sum(firstNum, secondNum) {
-//   return firstNum + secondNum;
-// }
+function sum(firstNum, secondNum) {
+  return firstNum + secondNum;
+}
 
-// const sumWithMemory = saveFuncCalls(sum);
-// console.log(sumWithMemory(4, 2)); // ===> 6
-// console.log(sumWithMemory(9, 1)); // ===> 10
+const sumWithMemory = saveFuncCalls(sum);
+console.log(sumWithMemory(4, 2)); // ===> 6
+console.log(sumWithMemory(9, 1)); // ===> 10
 
-// console.log(sumWithMemory.callsHistory); // ===> [ [4, 2], [9, 1] ]
+console.log(sumWithMemory.callsHistory); // ===> [ [4, 2], [9, 1] ]
 
 // // example 2
 // function addDelta(array, delta) {
