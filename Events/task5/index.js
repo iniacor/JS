@@ -1,5 +1,6 @@
-const btn = document.querySelector('.create-btn');
-const alert = () => {
-  window.alert('done');
+const btn = document.querySelector('.search__btn');
+const inputText = () => {
+  const inputText = document.querySelector('.search__input');
+  console.log(inputText.value);
 };
-btn.addEventListener('click', alert);
+btn.addEventListener('click', inputText);
