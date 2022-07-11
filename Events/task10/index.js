@@ -1,8 +1,15 @@
-const pagination = document.querySelector('.pagination');
+// const pagination = document.querySelector('.pagination');
+// const handleClick = (event) => {
+//   if (event.target.closest('.pagination__page')) {
+//     console.log(event.target.dataset.pageNumber);
+//   }
+// };
+// pagination.addEventListener('click', handleClick);
 
+const paginationPgs = document.querySelectorAll('.pagination__page');
 const handleClick = (event) => {
-  if (event.target.closest('.pagination__page')) {
-    console.log(event.target.dataset.pageNumber);
-  }
+  console.log(event.target.dataset.pageNumber);
 };
-pagination.addEventListener('click', handleClick);
+paginationPgs.forEach((el) => {
+  el.addEventListener('click', handleClick);
+});
