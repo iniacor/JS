@@ -1,5 +1,6 @@
-const btn = document.querySelector('.create-btn');
-const alert = () => {
-  window.alert('done');
+const btn = document.querySelector('.single-use-btn');
+const clickFn = () => {
+  console.log('clicked');
+  btn.removeEventListener('click', clickFn);
 };
-btn.addEventListener('click', alert);
+btn.addEventListener('click', clickFn);
