@@ -1,5 +1,5 @@
-const btn = document.querySelector('.create-btn');
-const alert = () => {
-  window.alert('done');
+const checkBox = document.querySelector('.task-status');
+const cbStatus = () => {
+  console.log(checkBox.checked);
 };
-btn.addEventListener('click', alert);
+checkBox.addEventListener('click', cbStatus);
