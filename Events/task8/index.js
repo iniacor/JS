@@ -1,5 +1,7 @@
-const btn = document.querySelector('.create-btn');
-const alert = () => {
-  window.alert('done');
+const textInput = document.querySelector('.text-input');
+
+const outputContent = (event) => {
+  console.log(event.target.value);
 };
-btn.addEventListener('click', alert);
+
+textInput.addEventListener('change', outputContent);
