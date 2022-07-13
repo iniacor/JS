@@ -65,20 +65,21 @@ const createNewTask = () => {
   };
   tasks.push(newTask);
   renderTasks(tasks);
-  taskInputField.innerHTML = '';
+  taskInputField.innerHTML = ''; // не работает
 };
 createBtn.addEventListener('click', createNewTask);
 
 const changeStatus = (event) => {
-  if (event.target !== 'checkbox') {
-    return;
-  }
+  // if (event.target !== 'checkbox') {
+  //   return;
+  // }
   const idNum = event.target.dataset.taskId;
-  const status = idNum.getAttribute('cheked');
+  const status = idNum.checked;
+  console.log(status);
   if (status) {
-    idNum.setAttribute(('checked', 'false'));
+    idNum.idNum.checked = 'false';
   }
-  idNum.setAttribute(('checked', 'true'));
+  idNum.idNum.checked = 'true';
 };
 
-listElem.addEventListener('click', changeStatus);
+listElem.addEventListener('click', changeStatus());
