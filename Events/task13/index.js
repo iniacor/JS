@@ -19,12 +19,12 @@ const listElem = document.querySelector('.list');
 // 8  после добавления очищаем поле ввода +++
 
 // algo 2 - change list's task status
-// 1 изменять статус задачи + сортировать выполненные задачи
-// 2 Изменение атрибута текущего значения элемента задачи
-// 3 Вешаем на весь лист событие клик и обработчик на событие
+// 1 изменять статус задачи + сортировать выполненные задачи +++
+// 2 Изменение атрибута текущего значения элемента задачи +++
+// 3 Вешаем на весь лист событие клик и обработчик на событие +++
 // 4 добавляем дата атрибут каждой задаче со своим id(data-task-id) +++
-// 5 получаем через event-target значение id (дата атрибута) целевого чекбокса. Делаем проверку -в колбеке где делегируем нужно делать if (clickedElem !== 'checkbox') return; После У данного чекбокса получаем значение атрибута done - Если значение true - меняем на false, если значение false - на true
-// 6 вызывваем функцию renderTasks, отрисовывая заново лист
+// 5 получаем через event-target значение id (дата атрибута) целевого чекбокса. Делаем проверку -в колбеке где делегируем нужно делать if (clickedElem !== 'checkbox') return; После У данного чекбокса получаем значение атрибута done - Если значение true - меняем на false, если значение false - на true +++
+// 6 вызывваем функцию renderTasks, отрисовывая заново лист +++
 
 const renderTasks = (tasksList) => {
   const tasksElems = tasksList
@@ -71,27 +71,12 @@ const createNewTask = () => {
 };
 createBtn.addEventListener('click', createNewTask);
 
-// const changeStatus = (event) => {
-//   const isCheckBox = event.target.classList.contains('list__item-checkbox');
-//   if (!isCheckBox) {
-//     return;
-//   }
-//   const idNum = event.target.dataset.taskId;
-//   const status = idNum.checked;
-//   console.log(status);
-//   if (status) {
-//     idNum.checked = 'false';
-//   }
-//   idNum.checked = 'true';
-// };
-
 const changeStatus = (event) => {
   const isCheckBox = event.target.classList.contains('list__item-checkbox');
   if (!isCheckBox) {
     return;
   }
   const idNum = event.target.dataset.taskId;
-  console.log(idNum);
   if (tasks[idNum].done) {
     tasks[idNum].done = false;
   } else {
