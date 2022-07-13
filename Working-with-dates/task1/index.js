@@ -8,5 +8,7 @@ export const dayOfWeek = (date, days) => {
   return week[new Date(dateInFuture).getDay()];
 };
 
-const res = dayOfWeek(new Date(2022, 6, 15), 13);
-console.log(res);
+const date = new Date(2022, 6, 15);
+const res = dayOfWeek(date, 13);
+console.log(res); // => Th
+console.log(date); // =>Fri Jul 15 2022 00:00:00 GMT+0300 (Восточная Европа, летнее время)
