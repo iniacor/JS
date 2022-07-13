@@ -71,18 +71,33 @@ const createNewTask = () => {
 };
 createBtn.addEventListener('click', createNewTask);
 
+// const changeStatus = (event) => {
+//   const isCheckBox = event.target.classList.contains('list__item-checkbox');
+//   if (!isCheckBox) {
+//     return;
+//   }
+//   const idNum = event.target.dataset.taskId;
+//   const status = idNum.checked;
+//   console.log(status);
+//   if (status) {
+//     idNum.checked = 'false';
+//   }
+//   idNum.checked = 'true';
+// };
+
 const changeStatus = (event) => {
   const isCheckBox = event.target.classList.contains('list__item-checkbox');
   if (!isCheckBox) {
     return;
   }
   const idNum = event.target.dataset.taskId;
-  const status = idNum.checked;
-  console.log(status);
-  if (status) {
-    idNum.checked = 'false';
+  console.log(idNum);
+  if (tasks[idNum].done) {
+    tasks[idNum].done = false;
+  } else {
+    tasks[idNum].done = true;
   }
-  idNum.checked = 'true';
+  listElem.innerHTML = '';
+  renderTasks(tasks);
 };
-
 listElem.addEventListener('click', changeStatus);
