@@ -64,15 +64,18 @@ const createNewTask = () => {
     done: false,
   };
   tasks.push(newTask);
+  taskInputField.value = '';
+  taskInputField.innerHTML = '';
+  listElem.innerHTML = '';
   renderTasks(tasks);
-  taskInputField.innerHTML = ''; // не работает
 };
 createBtn.addEventListener('click', createNewTask);
 
 const changeStatus = (event) => {
-  // if (event.target !== 'checkbox') {
-  //   return;
-  // }
+  const isCheckBox = event.target.classList.contains('list__item-checkbox');
+  if (!isCheckBox) {
+    return;
+  }
   const idNum = event.target.dataset.taskId;
   const status = idNum.checked;
   console.log(status);
@@ -82,4 +85,4 @@ const changeStatus = (event) => {
   idNum.idNum.checked = 'true';
 };
 
-listElem.addEventListener('click', changeStatus());
+listElem.addEventListener('click', changeStatus);
