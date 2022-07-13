@@ -46,4 +46,4 @@ const renderTasks = (tasksList) => {
 
   listElem.append(...listItemsElems);
 };
-// renderTasks(tasks);
+renderTasks(tasks);
