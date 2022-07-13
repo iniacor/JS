@@ -80,9 +80,9 @@ const changeStatus = (event) => {
   const status = idNum.checked;
   console.log(status);
   if (status) {
-    idNum.idNum.checked = 'false';
+    idNum.checked = 'false';
   }
-  idNum.idNum.checked = 'true';
+  idNum.checked = 'true';
 };
 
 listElem.addEventListener('click', changeStatus);
