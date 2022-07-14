@@ -65,7 +65,6 @@ const createNewTask = () => {
   };
   tasks.push(newTask);
   taskInputField.value = '';
-  taskInputField.innerHTML = '';
   listElem.innerHTML = '';
   renderTasks(tasks);
 };
