@@ -17,7 +17,7 @@ export const getDiff = (startDate, endDate) => {
     endDate.getMinutes(),
     endDate.getSeconds()
   );
-  const duration = Math.floor(utc2 - utc1);
+  const duration = Math.abs(Math.floor(utc2 - utc1));
   const days = parseInt(duration / (1000 * 60 * 60 * 24));
   const hours = parseInt((duration / (1000 * 60 * 60)) % 24);
   const minutes = parseInt((duration / (1000 * 60)) % 60);
