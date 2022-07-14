@@ -25,18 +25,11 @@ export const getDiff = (startDate, endDate) => {
   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
 
-const startD = new Date();
-const endD = new Date(2017, 4, 13);
-const endD2 = new Date(2024, 3, 18);
-console.log(getDiff(startD, endD));
-console.log(getDiff(startD, endD2));
-console.log(startD);
-console.log(endD);
-
-// function msToTime(duration) {
-//   const days = parseInt(duration / (1000 * 60 * 60 * 24));
-//   const hours = parseInt((duration / (1000 * 60 * 60)) % 24);
-//   const minutes = parseInt((duration / (1000 * 60)) % 60);
-//   const seconds = parseInt((duration / 1000) % 60);
-//   return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-// }
+// test Data--
+// const startD = new Date();
+// const endD = new Date(2017, 4, 13);
+// const endD2 = new Date(2024, 3, 18);
+// console.log(getDiff(startD, endD));
+// console.log(getDiff(startD, endD2));
+// console.log(startD);
+// console.log(endD);
