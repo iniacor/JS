@@ -2,15 +2,15 @@ import { renderTasks } from './renderer.js';
 import { getItem, setItem } from './storage.js';
 
 export const onCreateTask = () => {
-  const taskTitleInputElem = document.querySelector('.task-input');
+  const taskInputField = document.querySelector('.task-input');
 
-  const text = taskTitleInputElem.value;
+  const text = taskInputField.value;
 
   if (!text) {
     return;
   }
 
-  taskTitleInputElem.value = '';
+  taskInputField.value = '';
   const tasksList = getItem('tasksList') || [];
 
   const newTasksList = tasksList.concat({

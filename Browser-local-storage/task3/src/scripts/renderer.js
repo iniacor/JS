@@ -1,5 +1,7 @@
 import { getItem } from './storage';
 
+const listElem = document.querySelector('.list');
+
 const createCheckbox = ({ done, id }) => {
   const checkboxElem = document.createElement('input');
   checkboxElem.setAttribute('type', 'checkbox');
@@ -25,7 +27,9 @@ export const renderTasks = () => {
   const tasksList = getItem('tasksList') || [];
 
   listElem.innerHTML = '';
-  const tasksElems = tasksList.sort(compareTasks).map(createListItem);
+  const tasksElems = tasksList
+    .sort((a, b) => a.done - b.done)
+    .map(createListItem);
 
   listElem.append(...tasksElems);
 };
