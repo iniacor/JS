@@ -28,3 +28,11 @@
 // console.log(topSalary(salaries));
 // console.log(topSalary(salaries2));
 // console.log(topSalary({}));
+
+// const user = {
+//   name: 'Tom',
+//   age: 18,
+//   color: 'white',
+// };
+// console.log(user.name === 'underfined');
+// console.log(user.height === 'underfined');
