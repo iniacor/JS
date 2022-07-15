@@ -1,9 +1,5 @@
 import { getItem } from './storage';
-import { onCreateTask } from './createTask.js';
-import { initTodoListHandlers } from './odoList';
 
-initTodoListHandlers();
-onCreateTask();
 const createCheckbox = ({ done, id }) => {
   const checkboxElem = document.createElement('input');
   checkboxElem.setAttribute('type', 'checkbox');
@@ -26,7 +22,7 @@ const createListItem = ({ text, done, id }) => {
 };
 
 export const renderTasks = () => {
-  const tasksList = getItem('tasksList');
+  const tasksList = getItem('tasksList') || [];
 
   listElem.innerHTML = '';
   const tasksElems = tasksList.sort(compareTasks).map(createListItem);

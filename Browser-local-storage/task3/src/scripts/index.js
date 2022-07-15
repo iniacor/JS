@@ -12,5 +12,3 @@ const onStorageChange = (e) => {
   }
 };
 window.addEventListener('storage', onStorageChange);
-
-console.log('renter');
