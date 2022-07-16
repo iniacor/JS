@@ -42,7 +42,7 @@
 // 6 в поле nodes итерируемся по obj.nodes вызывая основную функцию
 // input obj, arr
 // output new obj
-const markFavorites = (tree, favorites) => {
+export const markFavorites = (tree, favorites) => {
   const isFavorite = favorites.includes(tree.id);
   return {
     ...tree,
