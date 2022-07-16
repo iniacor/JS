@@ -29,10 +29,12 @@
 // console.log(topSalary(salaries2));
 // console.log(topSalary({}));
 
+// Проверка наличие свойства в объекте
 // const user = {
 //   name: 'Tom',
 //   age: 18,
 //   color: 'white',
 // };
-// console.log(user.name === 'underfined');
-// console.log(user.height === 'underfined');
+// console.log('name' in user); // true - свойство есть в объекте
+// console.log(user.height === undefined); // true = свойства нет в объекте
+// console.log(user.age === undefined); // false - свойство есть в объекте
