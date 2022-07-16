@@ -13,7 +13,7 @@ export const calc = (initValue) => {
       result /= number;
       return this;
     },
-    substract(number) {
+    subtract(number) {
       result -= number;
       return this;
     },
@@ -25,3 +25,4 @@ export const calc = (initValue) => {
 };
 // test Data
 // const result = calc(3).add(2).mult(4).div(10).substract(5).result();
+// console.log(result);
