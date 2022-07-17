@@ -79,7 +79,7 @@ export function shmoment(initValue) {
       return newDataValue;
     },
     result() {
-      return formatter.format(newDataValue);
+      return newDataValue;
     },
   };
   return calculateDate;
