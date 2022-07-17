@@ -7,13 +7,14 @@ const addImage = (imgSrc, callback) => {
 
   const onImageLoaded = () => {
     const { width, height } = imgElem;
-    callback(null, imgElem);
+    callback(null, { width, height });
   };
 
   imgElem.addEventListener('load', onImageLoaded);
   imgElem.addEventListener('error', () => callback('Image load is failed'));
 };
-
+const imgSrc =
+  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
 const onImageLoaded = (error, data) => {
   if (error) {
     console.log(error);
