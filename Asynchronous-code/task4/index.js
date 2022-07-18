@@ -6,5 +6,4 @@ export const delay = (delay, callback, context, ...args) => {
     callback.apply(context, args);
   }, delay);
 };
-
-// delay(1000, sum, this, 2, 2);
+// console.log(delay(2000, sum, null, 2, 2));
