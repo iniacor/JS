@@ -22,7 +22,6 @@ export const requestUserData = (userId) => {
   return promise;
 };
 
-const requestResult = requestUserData('userId777');
-requestResult
-  .then((data) => console.log(data))
-  .catch((error) => console.log(error));
+requestUserData('userid777')
+  .then((data) => data)
+  .catch((error) => error);
