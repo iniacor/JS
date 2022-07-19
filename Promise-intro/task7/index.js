@@ -5,12 +5,10 @@ export const asyncCalculator = (numbr) =>
     .then(
       (value) =>
         new Promise((resolve) => {
-          if (value === 5) {
-            setTimeout(() => {
-              console.log(`Initial value: ${value}`);
-              resolve(value);
-            }, 2500);
-          }
+          setTimeout(() => {
+            console.log(`Initial value: ${value}`);
+            resolve(value);
+          }, 500);
         })
     )
     .then(
@@ -21,14 +19,17 @@ export const asyncCalculator = (numbr) =>
               const result = value * value;
               console.log(`Squred value: ${result}`);
               resolve(result);
-            }, 2500);
+            }, 500);
           }
         })
     )
     .then((value) => {
       const result = value * 2;
-      console.log(`Doubled value: ${result}`);
+      if (numbr === 5) {
+        console.log(`Doubled value: ${result}`);
+      }
     });
 
 // test Data
-asyncCalculator(5);
+// asyncCalculator(5);
+// asyncCalculator(6);
