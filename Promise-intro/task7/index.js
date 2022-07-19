@@ -17,7 +17,7 @@ export const asyncCalculator = (numbr) =>
           if (value === 5) {
             setTimeout(() => {
               const result = value * value;
-              console.log(`Squred value: ${result}`);
+              console.log(`Squared value: ${result}`);
               resolve(result);
             }, 500);
           }
@@ -31,5 +31,5 @@ export const asyncCalculator = (numbr) =>
     });
 
 // test Data
-// asyncCalculator(5);
-// asyncCalculator(6);
+asyncCalculator(5);
+asyncCalculator(6);
