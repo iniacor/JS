@@ -1,14 +1,35 @@
+const successPromise = new Promise((resolve) => {
+  resolve(32);
+});
+
 /*
- * failedPromise должен зареджектить ошибку new Error('Oops, error!');
- * Ответьте себе на вопрос, какой тип данных имеет переменная failedPromise
+ * исправь цепочку промисов, чтобы в последнем обработчике вывелось нужное число
  */
 
-const failedPromise = new Promise((resolve, reject) => {
-  reject(new Error('Oops, error!'));
-});
+successPromise
+  .then((number) => {
+    const halfNumber = number / 2;
+    return halfNumber;
+  })
+  .then((number) => {
+    const squaredNumber = number * number;
+    return squaredNumber;
+  })
+  .then((result) => {
+    console.log(result); // 256
+  });
+
 /*
- * выведите в консоль ошибку в ф-ции onError
+ * исправь цепочку промисов, чтобы в последнем обработчике вывелось нужное число
  */
-failedPromise.catch(function onError(error) {
-  console.log(error);
-});
+successPromise
+  .then((number) => {
+    return number * 10;
+  })
+  .then((result) => {
+    console.log(result); // 320
+  });
+
+console.log(
+  '!!! Обрати внимание, что этот текст вывелся самым первым. Ведь это синхронный код, а промисы - асинхронны !!!'
+);
