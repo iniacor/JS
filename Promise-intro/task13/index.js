@@ -1,9 +1,12 @@
-export const delay = (delay) =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, delay);
-  });
+/*
+ * ф-ция makePromise должна вернуть промис со значением переданным в ф-цию
+ */
+
+export const makePromise = (num) => {
+  return Promise.resolve(num);
+};
 
 // test Data
-delay(3000).then(() => console.log('Done'));
+// makePromise(17).then((number) => {
+//   console.log(number); // 17
+// });
