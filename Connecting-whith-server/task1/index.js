@@ -20,7 +20,7 @@ const renderUserData = (userData) => {
   const { name, avatar_url, location } = userData;
   userAvatarElem.src = avatar_url;
   userNameElem.textContent = name;
-  userLocationElem.textContent = location;
+  userLocationElem.textContent = location ? `from ${location}` : null;
 };
 
 const onSearchUser = () => {
@@ -28,3 +28,31 @@ const onSearchUser = () => {
   fetchUserData(userName).then((userData) => renderUserData(userData));
 };
 showUserBtnElem.addEventListener('click', onSearchUser);
+
+///=================== another code
+
+// const userAvatar = document.querySelector('.user__avatar');
+// const userName = document.querySelector('.user__name');
+// const userLocation = document.querySelector('.user__location');
+
+// const userNameInput = document.querySelector('.name-form__input');
+// const userBtnInput = document.querySelector('.name-form__btn');
+
+// const sendRequestFetch = (name) => {
+//   return fetch(`http://api.github.com/users/${name}`).then((response) =>
+//     response.json()
+//   );
+// };
+// const userRender = (gitResponse) => {
+//   const { avatar_url, location, name } = gitResponse;
+//   userAvatar.src = avatar_url;
+//   userName.textContent = name;
+//   userLocation.textContent = location ? `from ${location}` : null;
+// };
+
+// const onClickButton = () => {
+//   const getName = userNameInput.value;
+//   sendRequestFetch(getName).then((response) => userRender(response));
+// };
+
+// userBtnInput.addEventListener('click', onClickButton);
