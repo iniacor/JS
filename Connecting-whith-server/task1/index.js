@@ -2,6 +2,9 @@ const userAvatarElem = document.querySelector('.user__avatar');
 const userNameElem = document.querySelector('.user__name');
 const userLocationElem = document.querySelector('.user__location');
 
+const defaultAvatar = 'https://avatars.githubusercontent.com/u/1342004?v=4';
+userAvatarElem.src = defaultAvatar;
+
 const showUserBtnElem = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
 
