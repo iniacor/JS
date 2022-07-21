@@ -4,6 +4,8 @@ const userLocationElem = document.querySelector('.user__location');
 
 const defaultAvatar = 'https://avatars.githubusercontent.com/u/1342004?v=4';
 userAvatarElem.src = defaultAvatar;
+const defaultUserName = 'Google';
+userNameElem.textContent = defaultUserName;
 
 const showUserBtnElem = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
