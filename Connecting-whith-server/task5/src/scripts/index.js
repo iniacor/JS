@@ -20,13 +20,7 @@ const loginForm = document.querySelector('.login-form');
 const registerBtn = document.querySelector('.submit-button');
 registerBtn.setAttribute('disabled', true);
 
-const inputField = document.querySelector('.form-input');
-const inputText = inputField.value;
-
 const onRegister = () => {
-  // const inputField = document.querySelector('.form-input');
-  // const inputText = inputField.value;
-
   const { name, email, password } = Object.fromEntries(new FormData(loginForm));
   const newUserData = {
     name,
@@ -42,21 +36,19 @@ const onRegister = () => {
 };
 registerBtn.addEventListener('click', onRegister);
 
-const onValidation = (e) => {
-  // if (inputText !== '') {
+const onValidation = () => {
+  // if (e.target.reportValidity()) {
   //   registerBtn.disabled = false;
   // }
-  // else registerBtn.disabled = true;
   if (loginForm.reportValidity()) {
     registerBtn.disabled = false;
   }
-  // loginForm.reportValidity();
 };
-loginForm.addEventListener('change', onValidation, false);
+loginForm.addEventListener('change', onValidation);
 
-const onEmptyField = (e) => {
-  if (inputText !== '') {
-    registerBtn.disabled = false;
-  } else registerBtn.disabled = true;
-};
-inputField.addEventListener('change', onEmptyField);
+// const onEmptyField = (e) => {
+//   if (inputText !== '') {
+//     registerBtn.disabled = false;
+//   } else registerBtn.disabled = true;
+// };
+// inputField.addEventListener('change', onEmptyField);
