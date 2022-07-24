@@ -13,7 +13,7 @@
 // clear input field(set empty string as value) or use
 // refactoring
 
-const baseUrl = 'https://62da9225e56f6d82a7651b64.mockapi.io/api/v1/users';
+// const baseUrl = 'https://62da9225e56f6d82a7651b64.mockapi.io/api/v1/users';
 
 export function createUser(userData) {
   return fetch(baseUrl, {
@@ -27,6 +27,16 @@ export function createUser(userData) {
 
 const loginForm = document.querySelector('.login-form');
 const registerBtn = document.querySelector('.submit-button');
+
+const onValidation = (e) => {
+  if (loginForm.reportValidity()) {
+    registerBtn.removeAttribute('disabled');
+    return;
+  }
+  registerBtn.setAttribute('disabled', true);
+};
+
+loginForm.addEventListener('input', onValidation);
 
 const onSubmit = (e) => {
   e.preventDefault();
@@ -43,13 +53,3 @@ const onSubmit = (e) => {
   });
 };
 loginForm.addEventListener('submit', onSubmit);
-
-const onValidation = (e) => {
-  if (loginForm.reportValidity()) {
-    registerBtn.removeAttribute('disabled');
-    return;
-  }
-  registerBtn.setAttribute('disabled', true);
-};
-
-loginForm.addEventListener('input', onValidation);
