@@ -1,4 +1,4 @@
-import { createUser } from './usersGateway.js';
+// import { createUser } from './usersGateway.js';
 
 // algo
 // get btn node +++
@@ -11,11 +11,20 @@ import { createUser } from './usersGateway.js';
 // Post newUserData to server throw method POST +++
 // listen server answer (.then) and alert +++
 // clear input field(set empty string as value) or use
-// method formElem.reset()
-
-// can read format with Object.fromEntries(new FormData(formElem))
-// for validation check use method reportValidity()
 // refactoring
+
+const baseUrl = 'https://62da9225e56f6d82a7651b64.mockapi.io/api/v1/users';
+
+export function createUser(userData) {
+  return fetch(baseUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(userData),
+  }).then((response) => response.json());
+}
+
 const loginForm = document.querySelector('.login-form');
 const registerBtn = document.querySelector('.submit-button');
 
@@ -30,20 +39,16 @@ const onSubmit = (e) => {
 
   createUser(newUserData).then((userData) => {
     alert(JSON.stringify(userData));
-    console.log('User created');
     loginForm.reset();
   });
 };
 loginForm.addEventListener('submit', onSubmit);
 
 const onValidation = (e) => {
-  console.log(loginForm.reportValidity());
-
   if (loginForm.reportValidity()) {
     registerBtn.removeAttribute('disabled');
     return;
   }
-
   registerBtn.setAttribute('disabled', true);
 };
 
