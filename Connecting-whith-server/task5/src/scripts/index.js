@@ -18,9 +18,9 @@ import { createUser } from './usersGateway.js';
 // refactoring
 const loginForm = document.querySelector('.login-form');
 const registerBtn = document.querySelector('.submit-button');
-registerBtn.setAttribute('disabled', true);
 
-const onRegister = () => {
+const onSubmit = (e) => {
+  e.preventDefault();
   const { name, email, password } = Object.fromEntries(new FormData(loginForm));
   const newUserData = {
     name,
@@ -34,21 +34,17 @@ const onRegister = () => {
     loginForm.reset();
   });
 };
-registerBtn.addEventListener('click', onRegister);
+loginForm.addEventListener('submit', onSubmit);
 
-const onValidation = () => {
-  // if (e.target.reportValidity()) {
-  //   registerBtn.disabled = false;
-  // }
+const onValidation = (e) => {
+  console.log(loginForm.reportValidity());
+
   if (loginForm.reportValidity()) {
-    registerBtn.disabled = false;
+    registerBtn.removeAttribute('disabled');
+    return;
   }
-};
-loginForm.addEventListener('change', onValidation);
 
-// const onEmptyField = (e) => {
-//   if (inputText !== '') {
-//     registerBtn.disabled = false;
-//   } else registerBtn.disabled = true;
-// };
-// inputField.addEventListener('change', onEmptyField);
+  registerBtn.setAttribute('disabled', true);
+};
+
+loginForm.addEventListener('input', onValidation);
