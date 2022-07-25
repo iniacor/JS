@@ -52,15 +52,14 @@ export const onDeleteTask = (e) => {
     finishDate: done ? new Date().toISOString() : null,
   };
 
-  deleteTask(taskId)
-    .then(() => getTasksList())
-    .then((tasksList) => {
-      tasksList.find((task) => {
-        task.id === taskId;
-        localstorage.removeItem(tasksList[taskId]);
-      });
-      updateTask();
-    });
+  deleteTask(taskId).then(() => getTasksList());
+  // .then((tasksList) => {
+  //   tasksList.find((task) => {
+  //     task.id === taskId;
+  //     localStorage.removeItem(tasksList[taskId]);
+  //   });
+  //   updateTask();
+  // });
 
   updateTask(taskId, updatedTask)
     .then(() => getTasksList())

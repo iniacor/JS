@@ -2,10 +2,9 @@
 
 // algo
 // get btn node +++
-// btn.setAttribute('disabled', 'boolean') +++
 // add eventlistener to btn +++
-// get input nodes +++
-// add eventlistener to btn's +++
+// get form nodes +++
+// add eventlistener to form on event submit +++
 // write info from input to obj newUserData +++
 // write fn to post data to server +++
 // Post newUserData to server throw method POST +++
