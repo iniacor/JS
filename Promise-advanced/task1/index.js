@@ -10,6 +10,7 @@ export const fetchUser = async (userId) => {
     throw new Error('Failed to get user data');
   }
 };
-fetchUser('google').catch((err) => {
-  alert(err.message);
-});
+// test Data
+// fetchUser('google').catch((err) => {
+//   alert(err.message);
+// });
