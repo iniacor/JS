@@ -1,6 +1,8 @@
 // Context this
 // Реализация bind
 
+// const { doc } = require('prettier');
+
 // import { doc } from 'prettier';
 
 // const user = {
@@ -26,16 +28,3 @@
 // const greeting = bind(sayHi, user, 'Hello');
 
 // console.log(greeting('Hello'));
-export function createButton(buttonText) {
-  const body = document.querySelector('body');
-  const btn = document.createElement('button');
-  btn.textContent = `${buttonText}`;
-  btn.setAttribute('type', 'button');
-  body.append(btn);
-}
-createButton('test');
-// algo
-// get body node
-// create btn elem
-// set text content for btn elem
-// ... etc
