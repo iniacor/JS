@@ -1,6 +1,6 @@
 export const fetchUser = async (userId) => {
   try {
-    const response = await fetch(`https://api.githb.com/users/${userId}`);
+    const response = await fetch(`https://api.github.com/users/${userId}`);
     if (!response.ok) {
       return null;
     }
@@ -11,6 +11,6 @@ export const fetchUser = async (userId) => {
   }
 };
 // test Data
-// fetchUser('google').catch((err) => {
+// fetchUser('github').catch((err) => {
 //   alert(err.message);
 // });
