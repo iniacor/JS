@@ -23,7 +23,7 @@ const userRepoList = document.querySelector('.repo-list');
 
 const defaultUser = {
   name: '',
-  avatar_url: 'https://avatars3.githubusercontent.com/u10001',
+  avatar_url: 'https://avatars3.githubusercontent.com/u10001.',
   location: '',
 };
 renderUserData(defaultUser);
