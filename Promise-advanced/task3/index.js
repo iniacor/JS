@@ -4,9 +4,12 @@
  */
 
 // algo
-// get fetch
-// return promise with array of users
+// get array
+// iterate input array with map and do fetch on every step
+// put in variable result of await Promise.all(fetch response) and get property body of every elem
+// return promise with array of users blog
 // cath error if any requre has error
+
 export const getUsersBlogs = async (users) => {
   try {
     const userFetch = users.map((userName) => {
