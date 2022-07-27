@@ -19,11 +19,9 @@ import { showSpinner, hideSpinner } from './spinner.js';
 // add spinner elem classname .spinner_hidden
 // if we have some error catch it and alert('Failed to load data')
 
-const userRepoList = document.querySelector('.repo-list');
-
 const defaultUser = {
   name: '',
-  avatar_url: 'https://avatars3.githubusercontent.com/u10001',
+  avatar_url: 'https://avatars3.githubusercontent.com/u10001.',
   location: '',
 };
 renderUserData(defaultUser);
@@ -41,7 +39,7 @@ const onSearchUser = async () => {
     const reposList = await fetchRepositories(userData.repos_url);
     renderRepos(reposList);
   } catch (error) {
-    alert(err.message);
+    alert(error.message);
   } finally {
     hideSpinner();
   }
