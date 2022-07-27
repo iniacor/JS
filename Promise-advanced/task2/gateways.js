@@ -13,3 +13,10 @@ export const fetchRepositories = async (url) => {
   }
   throw new Error('Failed to load data');
 };
+
+// algo
+// get array
+// iterate input array with map and do fetch on every step
+// put in variable result of await Promise.all(fetch response) and get property body of every elem
+// return promise with array of users blog
+// cath error if any requre has error
