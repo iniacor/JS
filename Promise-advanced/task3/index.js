@@ -13,19 +13,19 @@
 export const getUsersBlogs = async (users) => {
   try {
     const userFetch = users.map((userName) => {
-      return fetch(`https://api.github.com/users/${userName}`);
+      return fetch(`https://api.github.com/users/${userName}`).then(
+        (response) => response.json().then((url) => url.blog)
+      );
     });
     const response = await Promise.all(userFetch);
-    console.log(response);
-    const linkList = response.map((url) => url.body);
-    return linkList;
+    return response;
   } catch (error) {
     throw new Error('Failed to load data');
   }
 };
 
 // examples
-getUsersBlogs(['google', 'facebook', 'reactjs']).then((linksList) =>
-  console.log(linksList)
-); // ==> ["https://opensource.google/", "https://opensource.fb.com", "https://reactjs.org"]
-getUsersBlogs(['microsoft']).then((linksList) => console.log(linksList)); // ==> ["https://opensource.microsoft.com"]
+// getUsersBlogs(['google', 'facebook', 'reactjs']).then((linksList) =>
+//   console.log(linksList)
+// ); // ==> ["https://opensource.google/", "https://opensource.fb.com", "https://reactjs.org"]
+// getUsersBlogs(['microsoft']).then((linksList) => console.log(linksList)); // ==> ["https://opensource.microsoft.com"]
