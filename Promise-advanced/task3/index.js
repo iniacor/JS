@@ -32,15 +32,15 @@
 
 // =================== Refactoring =========================
 
-export const getUsersBlogs = (users) => {
+export const getUsersBlogs = async (users) => {
   try {
-    const userFetch = users.map(async (userName) => {
-      const response = await fetch(`https://api.github.com/users/${userName}`);
-      const url = await response.json();
-      return url.blog;
+    const userFetch = users.map((userName) => {
+      return fetch(`https://api.github.com/users/${userName}`).then((res) =>
+        res.json()
+      );
     });
-    const response = Promise.all(userFetch);
-    return response;
+    const userResults = await Promise.all(userFetch);
+    return userResults.map(({ blog }) => blog);
   } catch (error) {
     throw new Error('Failed to load data');
   }
