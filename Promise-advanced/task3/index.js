@@ -32,14 +32,15 @@
 
 // =================== Refactoring =========================
 
-export const getUsersBlogs = async (users) => {
+export const getUsersBlogs = async users => {
   try {
-    const userFetch = users.map((userName) => {
-      return fetch(`https://api.github.com/users/${userName}`).then((res) =>
-        res.json()
+    const userFetch = users.map(userName => {
+      return fetch(`https://api.github.com/users/${userName}`).then(response =>
+        response.json(),
       );
     });
     const userResults = await Promise.all(userFetch);
+    console.log(userResults);
     return userResults.map(({ blog }) => blog);
   } catch (error) {
     throw new Error('Failed to load data');
@@ -47,9 +48,11 @@ export const getUsersBlogs = async (users) => {
 };
 
 // examples
-getUsersBlogs(['google', 'facebook', 'reactjs']).then((linksList) =>
-  console.log(linksList)
+getUsersBlogs(['google', 'facebook', 'reactjs']).then(linksList =>
+  console.log(linksList),
 ); // ==> ["https://opensource.google/", "https://opensource.fb.com", "https://reactjs.org"]
-getUsersBlogs(['microsoft']).then((linksList) => console.log(linksList)); // ==> ["https://opensource.microsoft.com"]
+getUsersBlogs(['microsoft']).then(linksList => console.log(linksList)); // ==> ["https://opensource.microsoft.com"]
 
-// .then((url) => url.blog)
+// просто fetch возвращает промис Promise {<fulfilled>: Response} с хедерами и боди.
+// Чтобы получить не хедеры а объект в респонсе([[PromiseResult]]: Object), применяем метод .then(response => response.json()
+// Чтобы получить непосредственно объекты применяем await Promise.all(userFetch);
